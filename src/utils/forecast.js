@@ -11,7 +11,8 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find location', undefined)
             console.log(url)
         } else {
-            callback(undefined, 'It looks '+ body.current.weather_descriptions[0]+ '. It is ' + body.current.temperature + ' degrees ouside, but it feels like ' + body.current.feelslike + ' degrees.')
+            console.log(body.current)
+            callback(undefined, 'It looks '+ body.current.weather_descriptions[0]+ '. It is ' + body.current.temperature + ' degrees ouside, but it feels like ' + body.current.feelslike + ' degrees.The windspeed is ' + body.current.wind_speed + "! Wow.")
         }
     })
 }
